@@ -48,7 +48,11 @@ def count_down(count):
         window.after(1000, count_down, count - 1)
     else:
         start_timer()
-
+        mark = ""
+        work_session = math.floor(reps/2)
+        for _ in range(work_session):
+            mark += "✅"
+        checker.config(text=mark)
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Pomodoro Timer")
@@ -70,10 +74,10 @@ start.grid(column=0,row=2)
 reset = Button(text="RESET", highlightthickness=0)
 reset.grid(column=2, row=2)
 
-checker = Label(text="✅", bg=YELLOW, fg=GREEN)
+checker = Label(bg=YELLOW, fg=GREEN)
 checker.grid(column=1, row=3)
 
-
+# ✅
 
 
 
